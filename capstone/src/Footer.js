@@ -2,8 +2,8 @@ import Logo from './.\\assets\\icons_assets\\Logo.svg'
 
 const Footer = () => {
     return (
-        <footer>
-            <nav>
+        <footer style={{display:"flex"}}>
+            <nav style={{display:"flex"}}>
                 <img src={Logo}></img>
                 <ul>
                     <li><a>Home</a></li>
