@@ -4,7 +4,7 @@ export default function CallToAction() {
         <section style={{
             margin: "0",
             paddingTop:"5em",
-            padding: "0",
+            //padding: "0",
             boxSizing: "border-box",
             backgroundColor: "#495e57",
             display: "grid",

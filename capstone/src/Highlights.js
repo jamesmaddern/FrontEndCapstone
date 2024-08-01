@@ -1,23 +1,25 @@
 import Card from "./Card";
 import GreekSaladImage from './assets/icons_assets/greek salad.jpg'
+import BruchettaImage from './assets/icons_assets/bruchetta.svg'
+import LemonImage from './assets/icons_assets/lemon dessert.jpg'
 const cardContent = [
     {
         special:"Greek Salad",
         price:"$12.99",
         img:GreekSaladImage,
-        desc:"example text"
+        desc:"The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
     },
     {
-        special:"Greek Salad",
-        price:"$12.99",
-        img:GreekSaladImage,
-        desc:"example text"
+        special:"Bruchetta",
+        price:"$5.99",
+        img:BruchettaImage,
+        desc:"Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."
     },
     {
-        special:"Greek Salad",
-        price:"$12.99",
-        img:GreekSaladImage,
-        desc:"example text"
+        special:"Lemon Dessert",
+        price:"$5.00",
+        img:LemonImage,
+        desc:"This comes straight from grandma's recipe book, every last ingredient has been sourced and is authentic as can be imagined."
     }
 ]
 
@@ -25,7 +27,6 @@ export default function Highlights() {
     return (
         <div style={{
             backgroundColor: "white",
-            height: "40em",
             display: "grid",
             gridTemplateColumns: "repeat(12,1fr)",
             //gridTemplateRows: "repeat(50,1fr)",
@@ -55,7 +56,8 @@ export default function Highlights() {
                 gridColumn:"3/11",
                 gridRow:"5",
                 display:"grid",
-                gridTemplateColumns:"1fr 1fr 1fr"
+                gridTemplateColumns:"1fr 1fr 1fr",
+                gap:"20px"
             }}>
 
 

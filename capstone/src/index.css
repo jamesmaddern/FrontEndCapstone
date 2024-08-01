@@ -23,9 +23,12 @@ code {
   padding-left: 20px;
   height: 100%;
 }
-
+li{
+  list-style: none;
+}
 li:hover {
-  background-color: aliceblue;
+  text-decoration: underline;
+  
 }
 
 h1 {
