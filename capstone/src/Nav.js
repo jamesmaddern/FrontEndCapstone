@@ -7,6 +7,7 @@ import { Link, Outlet } from "react-router-dom"
 function Nav() {
     return (
         <div style={{
+            backgroundColor:"white",
             margin: "0",
             padding: "0",
             boxSizing: "border-box",
@@ -15,11 +16,12 @@ function Nav() {
             gap: "20px",
             gridTemplateRows: "7em",
             alignItems: "center",
+        
 
 
         }}>
-            <img src={Logo} style={{ height:"5em",gridColumn: "3/7" }}></img>
-            <nav id='topNav' style={{ gridColumn: "7/12",
+            <img src={Logo} style={{ height:"5em",gridColumn: "3/5" }}></img>
+            <nav id='topNav' style={{ gridColumn: "5/11",
                 justifySelf:'right'
              }}>
                 <ul style={{

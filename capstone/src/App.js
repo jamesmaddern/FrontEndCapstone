@@ -7,7 +7,8 @@ function App() {
   return (
 
     <>
-      <Nav></Nav>
+      <div style={{ position: "fixed" }}>
+        <Nav></Nav></div>
       <Main></Main>
       <Footer></Footer>
     </>
