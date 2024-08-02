@@ -6,7 +6,7 @@ const Footer = () => {
             display: "grid",
             gridTemplateColumns: "repeat(12,1fr)",
             gap: "20px",
-            backgroundColor: "#333333"
+            backgroundColor: "#495e57"
         }}>
 
 

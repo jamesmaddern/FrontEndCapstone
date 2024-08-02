@@ -1,4 +1,4 @@
-import Card from "./Card";
+import {SpecialCard} from "./Card.js";
 import GreekSaladImage from './assets/icons_assets/greek salad.jpg'
 import BruchettaImage from './assets/icons_assets/bruchetta.svg'
 import LemonImage from './assets/icons_assets/lemon dessert.jpg'
@@ -63,7 +63,7 @@ export default function Highlights() {
 
                 {cardContent.map((item)=>{
                     return(
-                    <Card img={item.img}
+                    <SpecialCard img={item.img}
                     special={item.special}
                     price={item.price}
                     desc={item.desc}/>)
