@@ -4,13 +4,10 @@ import { Link, Outlet } from "react-router-dom"
 
 
 
-function Nav() {
-
-  
-   
+function Nav({ scrollToAbout }) {
 
 
-
+    
     return (
         <div style={{
             width: "100%",
@@ -38,7 +35,7 @@ function Nav() {
                     margin: "auto",
                 }}>
                     <Link className="nav-link" to="/">Home</Link>
-                    <Link className="nav-link" to="about">About</Link>
+                    <Link className="nav-link" to="/" onClick={scrollToAbout}>About</Link>
                     <Link className="nav-link" to="/">Menu</Link>
                     <Link className="nav-link" to="booking">Reservations</Link>
                     <Link className="nav-link" to="order">Order Online</Link>

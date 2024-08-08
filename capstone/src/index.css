@@ -57,6 +57,13 @@ li{
 .order-link:hover{
   text-decoration: underline;
 }
+.footer-link{
+  color:white;
+  text-decoration: none;
+}
+.footer-link:hover{
+  text-decoration: underline;
+}
 h1 {
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;
