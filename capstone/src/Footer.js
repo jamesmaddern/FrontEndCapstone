@@ -1,4 +1,5 @@
 import Logo from './.\\assets\\icons_assets\\Logo.svg'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -7,33 +8,36 @@ const Footer = () => {
             gridTemplateColumns: "repeat(12,1fr)",
             gap: "20px",
             backgroundColor: "#495e57"
+            
         }}>
 
 
 
             <img src={Logo} style={{
-                gridColumn:"3"
+                gridColumn: "3/5"
             }}></img>
             <ul style={{
-                gridColumn:"5",
-                padding:"0",
-                
+                gridColumn: "5",
+                padding: "0",
+                display:"flex",
+                flexDirection:"column"
+
             }}>
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Menu</a></li>
-                <li><a>Reservations</a></li>
-                <li><a>Order Online</a></li>
-                <li><a>Login</a></li>
+                <Link className="footer-link" to="/">Home</Link>
+                <Link className="footer-link" to="about">About</Link>
+                <Link className="footer-link" to="/">Menu</Link>
+                <Link className="footer-link" to="booking">Reservations</Link>
+                <Link className="footer-link" to="order">Order Online</Link>
+                <Link className="footer-link" to="login">Login</Link>
             </ul>
 
             <section style={{
-                gridColumn:"7"
+                gridColumn: "7"
             }}>
                 Contact
             </section>
             <section style={{
-                gridColumn:"9"
+                gridColumn: "9"
             }}>
                 Social Media Links
             </section>

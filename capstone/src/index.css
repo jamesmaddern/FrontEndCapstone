@@ -26,12 +26,37 @@ code {
 li{
   list-style: none;
 }
-li:hover {
+.nav-link:hover {
   text-decoration: underline;
   
   
 }
+.nav-link{
+  color:black;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  list-style: none;
+  font-size: 16pt;
+  padding: 0px;
+  padding-left: 20px;
+  height: 100%;
+  text-decoration: none;
+}
+.nav-link:visited{
+  color:black;
+}
 
+.order-link:visited{
+  color:black;
+}
+.order-link{
+  text-decoration:none;
+}
+.order-link:hover{
+  text-decoration: underline;
+}
 h1 {
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;

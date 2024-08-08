@@ -5,9 +5,17 @@ import { Link, Outlet } from "react-router-dom"
 
 
 function Nav() {
+
+  
+   
+
+
+
     return (
         <div style={{
-            backgroundColor:"white",
+            width: "100%",
+            position: "fixed",
+            backgroundColor: "white",
             margin: "0",
             padding: "0",
             boxSizing: "border-box",
@@ -16,25 +24,25 @@ function Nav() {
             gap: "20px",
             gridTemplateRows: "7em",
             alignItems: "center",
-        
 
 
         }}>
-            <img src={Logo} style={{ height:"5em",gridColumn: "3/5" }}></img>
-            <nav id='topNav' style={{ gridColumn: "5/11",
-                justifySelf:'right'
-             }}>
+            <img src={Logo} style={{ height: "5em", gridColumn: "3/5" }}></img>
+            <nav id='topNav' style={{
+                gridColumn: "5/11",
+                justifySelf: 'right'
+            }}>
                 <ul style={{
                     display: "flex",
                     padding: "0",
                     margin: "auto",
                 }}>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Menu</li>
-                    <li>Reservations</li>
-                    <li>Order Online</li>
-                    <li>Login</li>
+                    <Link className="nav-link" to="/">Home</Link>
+                    <Link className="nav-link" to="about">About</Link>
+                    <Link className="nav-link" to="/">Menu</Link>
+                    <Link className="nav-link" to="booking">Reservations</Link>
+                    <Link className="nav-link" to="order">Order Online</Link>
+                    <Link className="nav-link" to="login">Login</Link>
                 </ul>
             </nav>
 

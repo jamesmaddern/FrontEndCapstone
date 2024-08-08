@@ -1,4 +1,5 @@
 import star from "./assets/icons_assets/star.svg"
+import { Link } from "react-router-dom"
 export function SpecialCard(props) {
     return (
         <div style={{
@@ -45,12 +46,14 @@ export function SpecialCard(props) {
                 padding: "10px"
             }}>{props.desc}</p>
 
-            <h3 style={{
+            <Link className="order-link" to="/order" style={{
                 gridColumn: "span 3",
                 padding: "10px",
                 fontWeight: "700",
-                fontSize: "16pt"
-            }}>Order a delivery</h3>
+                fontSize: "16pt",
+                
+                
+            }}>Order a delivery</Link>
         </div>
 
 
@@ -70,14 +73,14 @@ export function ReviewCard(props) {
                 gridColumn:"span 3"
             }}>{props.name}</h3>
             <img src={props.photo} style={{
-                gridColumn:"1"
+                gridColumn:"1",
+                borderRadius:"100%",
+                height:"75px"
             }} />
             <div style={{
                 gridColumn:"2/4"
-            }}>{props.review}</div>
-            <h2>{props.rating}<img src={star} height="15px" style={{
-                fill:"yellow"
-            }}/></h2>
+            }}><p style={{margin:"0"}}>{props.review}</p></div>
+            <h2>{props.rating}<img src={star} height="15px"/></h2>
         </div>
     )
 }
