@@ -1,15 +1,13 @@
 import Logo from './.\\assets\\icons_assets\\Logo.svg'
 import * as React from "react";
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
+import { useEffect } from 'react';
+import "./Nav.css"
 
-
-
-function Nav({ scrollToAbout }) {
-
-
-    
-    return (
-        <div style={{
+const Nav = ({handleClick}) =>{
+    return(
+        <div id ="top-nav" 
+        style={{
             width: "100%",
             position: "fixed",
             backgroundColor: "white",
@@ -23,7 +21,8 @@ function Nav({ scrollToAbout }) {
             alignItems: "center",
 
 
-        }}>
+        }}
+        >
             <img src={Logo} style={{ height: "5em", gridColumn: "3/5" }}></img>
             <nav id='topNav' style={{
                 gridColumn: "5/11",
@@ -34,8 +33,8 @@ function Nav({ scrollToAbout }) {
                     padding: "0",
                     margin: "auto",
                 }}>
-                    <Link className="nav-link" to="/">Home</Link>
-                    <Link className="nav-link" to="/" onClick={scrollToAbout}>About</Link>
+                    <Link className="nav-link" to="/" onClick={()=>window.scrollTo(0,0)}  >Home</Link>
+                    <Link className="nav-link" to="/" onClick ={handleClick}>About</Link>
                     <Link className="nav-link" to="/">Menu</Link>
                     <Link className="nav-link" to="booking">Reservations</Link>
                     <Link className="nav-link" to="order">Order Online</Link>
@@ -46,4 +45,5 @@ function Nav({ scrollToAbout }) {
         </div>
     )
 }
+
 export default Nav;

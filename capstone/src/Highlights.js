@@ -61,9 +61,10 @@ export default function Highlights() {
             }}>
 
 
-                {cardContent.map((item)=>{
+                {cardContent.map((item, index)=>{
                     return(
-                    <SpecialCard img={item.img}
+                    <SpecialCard key={index}
+                    img={item.img}
                     special={item.special}
                     price={item.price}
                     desc={item.desc}/>)

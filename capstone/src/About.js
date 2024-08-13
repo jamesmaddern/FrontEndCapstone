@@ -2,7 +2,7 @@ import Image1 from "./assets/icons_assets/restaurant.jpg"
 import Image2 from "./assets/icons_assets/Mario and Adrian A.jpg"
 export default function About() {
     return (
-        <>
+        <div id ="about">
             <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(12, 1fr)",
@@ -56,6 +56,6 @@ export default function About() {
 
 
             </div>
-        </>
+        </div>
     )
 }

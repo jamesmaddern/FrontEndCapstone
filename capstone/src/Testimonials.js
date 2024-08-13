@@ -57,8 +57,9 @@ export default function Testimonials() {
                     gap: "20px"
                 }}>
 
-                {reviews.map((review) => {
+                {reviews.map((review, index) => {
                     return (<ReviewCard
+                        key={index}
                         name={review.name}
                         photo={review.photo}
                         rating={review.rating}

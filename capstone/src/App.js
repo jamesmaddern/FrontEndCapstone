@@ -7,25 +7,21 @@ import BookingPage from './pages/BookingPage.js';
 import HomePage from './pages/HomePage.js';
 import { useEffect, useRef, useState } from 'react';
 function App() {
+
   const aboutRef = useRef();
-  const navigate = useNavigate();
   const [scrollToAbout, setScrollToAbout] = useState(false);
 
-  const handleScrollToAbout= () =>{
-    if (window.location.pathname !== '/'){
-      setScrollToAbout(true);
-      navigate('/');
-    } else {
-      aboutRef.current.scrollIntoView({behavior:'smooth'});
-    }
+  const handleClick= () =>{
+    setScrollToAbout(true);
   };
 
   useEffect(() => {
-    if (scrollToAbout && aboutRef.current){
-      aboutRef.current.scrollIntoView({ behavior:'smooth'});
+    if(scrollToAbout && aboutRef){
+      aboutRef.current.scrollIntoView();
       setScrollToAbout(false);
     }
-  }, [scrollToAbout, aboutRef]);
+  
+  }, [scrollToAbout]);
 
 
 
@@ -35,7 +31,7 @@ function App() {
 
     <>
       
-      <Nav scrollToAbout={handleScrollToAbout}/>
+      <Nav handleClick={handleClick}/>
         <Routes>
             <Route path="/" element={<HomePage aboutRef={aboutRef} />}></Route>
             <Route path="booking" element={<BookingPage />}></Route>

@@ -3,16 +3,18 @@ import About from "../About";
 import CallToAction from "../CallToAction";
 import Highlights from "../Highlights";
 import Testimonials from "../Testimonials"
-function HomePage( {aboutRef}){
+function HomePage(props){
     
     return(
         <>
-        <CallToAction />
+        <div ref={props.actionRef}>
+            <CallToAction />
+        </div>
         <div style={{height:"100px"}}></div>
         <Highlights />
         <Testimonials/>
-        <div ref={aboutRef}>
-        <About/>
+        <div ref={props.aboutRef}>
+            <About/>
         </div>
         </>
     )
