@@ -8,6 +8,7 @@ import BookingPage from "./pages/BookingPage.js";
 import HomePage from "./pages/HomePage.js";
 import { useEffect, useRef, useState } from "react";
 import useWindowDimensions from "./useWindowDimensions.js";
+import FooterMd from "./FooterMd.js";
 function App() {
   console.log("Rendering App...");
   const aboutRef = useRef();
@@ -40,7 +41,9 @@ function App() {
         <Route path="/" element={<HomePage aboutRef={aboutRef}/>}/>
         <Route path="booking" element={<BookingPage />}></Route>
       </Routes>
-      <Footer></Footer>
+      {!matches && <FooterMd/>}
+      {matches && <Footer/>}
+      
     </>
   );
 }

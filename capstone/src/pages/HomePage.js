@@ -5,6 +5,9 @@ import CallToActionMd from "../CallToAction-md";
 import Highlights from "../Highlights";
 import Testimonials from "../Testimonials";
 import useWindowDimensions from "../useWindowDimensions";
+import HighlightsMd from "../HighlightsMd";
+import TestimonialsMd from "../TestimonialsMd";
+import AboutMd from "../AboutMd";
 
 function HomePage({aboutRef}) {
   const dims = useWindowDimensions()
@@ -21,10 +24,15 @@ function HomePage({aboutRef}) {
         {matches && <CallToAction />}
       
       <div style={{ height: "100px" }}></div>
-      <Highlights />
-      <Testimonials />
+      {!matches &&<HighlightsMd/>}
+      {matches &&<Highlights/>}
+      
+      {!matches &&<TestimonialsMd/>}
+      {matches && <Testimonials/>}
+      
       <div ref={aboutRef}>
-        <About />
+      {!matches &&<AboutMd/>}
+      {matches && <About/>}
       </div>
     </>
   );
