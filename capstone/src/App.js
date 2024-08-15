@@ -6,20 +6,31 @@ import Footer from "./Footer.js";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import BookingPage from "./pages/BookingPage.js";
 import HomePage from "./pages/HomePage.js";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import useWindowDimensions from "./useWindowDimensions.js";
 import FooterMd from "./FooterMd.js";
 function App() {
   console.log("Rendering App...");
+  const updateTimes = (times) => {
+    return([...times])
+  };
+  const initialiseTimes = () => {
+    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  }
+  const [availableTimes,setAvailableTimes] = useReducer(updateTimes, initialiseTimes());
+ 
+
+
+
+
+
   const aboutRef = useRef();
   const [scrollToAbout, setScrollToAbout] = useState(false);
-  const dims = useWindowDimensions()
+  const dims = useWindowDimensions();
   const [matches, setMatches] = useState(dims.width > 1400);
   useEffect(() => {
     setMatches(dims.width > 1400);
-    
   }, [dims]);
-
 
   const handleClick = () => {
     setScrollToAbout(true);
@@ -27,23 +38,30 @@ function App() {
 
   useEffect(() => {
     if (scrollToAbout && aboutRef) {
-      aboutRef.current.scrollIntoView();
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
       setScrollToAbout(false);
     }
   }, [scrollToAbout]);
 
   return (
     <>
-      {!matches && <NavMd handleClick={handleClick}/>}
-      {matches && <Nav handleClick={handleClick}/>}
-      
+      {!matches && <NavMd handleClick={handleClick} />}
+      {matches && <Nav handleClick={handleClick} />}
+
       <Routes>
-        <Route path="/" element={<HomePage aboutRef={aboutRef}/>}/>
-        <Route path="booking" element={<BookingPage />}></Route>
+        <Route path="/" element={<HomePage aboutRef={aboutRef} />} />
+        <Route
+          path="booking"
+          element={
+            <BookingPage
+              availableTimes={availableTimes}
+              setAvailableTimes={setAvailableTimes}
+            />
+          }
+        ></Route>
       </Routes>
-      {!matches && <FooterMd/>}
-      {matches && <Footer/>}
-      
+      {!matches && <FooterMd />}
+      {matches && <Footer />}
     </>
   );
 }
