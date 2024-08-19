@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function BookingForm({availableTimes, setAvailableTimes}) {
-  
+export default function BookingForm({ availableTimes, setAvailableTimes }) {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("");
@@ -11,7 +10,6 @@ export default function BookingForm({availableTimes, setAvailableTimes}) {
     console.log(e);
     e.preventDefault();
   };
-  
 
   return (
     <form
@@ -29,12 +27,12 @@ export default function BookingForm({availableTimes, setAvailableTimes}) {
         id="res-date"
         onChange={(e) => {
           setDate(e.target.value);
-          setAvailableTimes(availableTimes);
+          setAvailableTimes(e.target.value);
         }}
       />
-      
+
       <label htmlFor="res-time">Choose Time</label>
-      
+
       <select
         id="res-time"
         onChange={(e) => {

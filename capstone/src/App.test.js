@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Nav from './Nav.js';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('Renders the BookingForm heading', () => {
+  render(<Nav />);
+  const navElement = screen.getByText("Home");
+  expect(navElement).toBeInTheDocument();
+})

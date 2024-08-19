@@ -9,20 +9,23 @@ import HomePage from "./pages/HomePage.js";
 import { useEffect, useReducer, useRef, useState } from "react";
 import useWindowDimensions from "./useWindowDimensions.js";
 import FooterMd from "./FooterMd.js";
+import { fetchAPI } from "../src/api.js";
 function App() {
   console.log("Rendering App...");
-  const updateTimes = (times) => {
-    return([...times])
-  };
   const initialiseTimes = () => {
+    return fetchAPI(new Date());
+
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  }
-  const [availableTimes,setAvailableTimes] = useReducer(updateTimes, initialiseTimes());
- 
+  };
+  const updateTimes = (state, date) => {
+    const newDates = fetchAPI(new Date(date));
+    return newDates;
+  };
 
-
-
-
+  const [availableTimes, setAvailableTimes] = useReducer(
+    updateTimes,
+    initialiseTimes()
+  );
 
   const aboutRef = useRef();
   const [scrollToAbout, setScrollToAbout] = useState(false);
